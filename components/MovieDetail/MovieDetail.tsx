@@ -14,9 +14,9 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieDetails }) => {
     return (
         <section className={styles['movie-detail']} aria-labelledby="movie-title" role="region">
             <img 
-            src={movieDetails.Poster} 
-            alt={`Poster of ${movieDetails.Title}`} 
-            className={styles['movie-detail__poster']} 
+                src={movieDetails.Poster} 
+                alt={`Poster of ${movieDetails.Title}`} 
+                className={styles['movie-detail__poster']} 
             />
             <div className={styles['movie-detail__detail-box']}>
                 <h2 id="movie-title" className={styles['movie-detail__title']}>{movieDetails.Title}</h2>
@@ -29,7 +29,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieDetails }) => {
                     IMDb Rating: {movieDetails.imdbRating}
                 </div>
             </div>
-      </section>
+        </section>
     );
 };
 
