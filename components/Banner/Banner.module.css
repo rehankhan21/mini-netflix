@@ -1,0 +1,50 @@
+.banner {
+  position: relative;
+  color: white;
+}
+.banner__image {
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.banner__image + .banner__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 10%, transparent 85%);
+}
+.banner__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.banner__content {
+  position: absolute;
+  bottom: 40px;
+  left: 30px;
+  right: 30px;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .banner__content {
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+  }
+}
+.banner__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .banner__title {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=Banner.module.css.map */

@@ -1,0 +1,32 @@
+.movie-detail {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: lightgrey;
+  border-radius: 8px;
+  max-height: 80vh;
+  max-width: 90vw;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.movie-detail__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.movie-detail__item {
+  margin-bottom: 10px;
+}
+.movie-detail__item:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .movie-detail {
+    width: 95vw;
+    max-height: 80vh;
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=MovieDetail.module.css.map */

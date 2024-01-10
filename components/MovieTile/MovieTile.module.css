@@ -1,0 +1,6 @@
+.movie-tile__poster {
+  transition: transform 0.3s ease-in-out;
+}
+.movie-tile__poster:hover {
+  transform: scale(1.05);
+}/*# sourceMappingURL=MovieTile.module.css.map */

@@ -1,0 +1,24 @@
+.movie-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.movie-tile-grid__tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.movie-tile-grid__tile:hover {
+  cursor: pointer;
+}
+.movie-tile-grid__tile__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.movie-tile-grid__tile__image:hover {
+  transform: scale(1.1);
+}/*# sourceMappingURL=MovieTileGrid.module.css.map */
