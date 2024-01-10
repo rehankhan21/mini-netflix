@@ -3,33 +3,69 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    background-color: lightgrey;
-    border-radius: 8px;
-    max-height: 80vh; // Maximum height
-    max-width: 90vw; // Maximum width
-    overflow-y: auto; // Scroll vertically if content is too long
-    box-sizing: border-box; // Ensures padding is included in width/height
+    background-color: #181818;
+    color: #fff; 
+    border-radius: 16px;
+    width: auto;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    &__list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    &::-webkit-scrollbar {
+        display: none;
     }
 
-    &__item {
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+
+    &__poster {
+        width: 100%;
+        max-width: 400px; 
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    &__detail-box {
+        background: #141414; 
+        padding: 15px;
         margin-bottom: 10px;
-        &:last-child {
-            margin-bottom: 0;
-        }
+        border-radius: 10px;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    // Media query for smaller screens
-    @media (max-width: 768px) {
-        width: 95vw; // Take up more width on smaller screens
-        max-height: 80vh; // Take up more height on smaller screens
-        font-size: 14px; // Smaller font size on smaller screens
+    &__plot {
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    &__rating {
+        font-size: 18px;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    @media (max-width: 1000px) {
+        width: 100vw;
+        max-width: 95vw; 
+        font-size: 14px;
     }
 }
-
