@@ -32,10 +32,18 @@ export default function Navbar() {
       <Link href='/movie' className={styles.navbar__logo}>
         <Image src={Logo} alt='Netflix logo' priority />
       </Link>
-      <button onClick={toggleMenu} className={styles.navbar__toggle}>
+      <button 
+        onClick={toggleMenu} 
+        className={styles.navbar__toggle}
+        aria-expanded={isMenuOpen} 
+        aria-controls="navbar-menu"
+      >
         Menu
       </button>
-      <ul className={`${styles['navbar__nav-list']} ${isMenuOpen ? styles['navbar__nav-list--open'] : ''}`}>
+      <ul 
+        className={`${styles['navbar__nav-list']} ${isMenuOpen ? styles['navbar__nav-list--open'] : ''}`}
+        id="navbar-menu"
+      >
         {links.map((link, idx) => (
           <li className={styles['navbar__nav-item']} key={idx}>
             <Link href={link.href} className={styles['navbar__nav-link']}>

@@ -32,16 +32,16 @@ const MovieTileGrid: React.FC = () => {
             setIsLoading(false);
           }
         };
-    
+        
         fetchMovies();
-      }, []);
+    }, []);
     
     if (isLoading) {
-        return <div>Loading...</div>
+        return <div aria-busy="true">Loading...</div>;
     }
-
+    
     if (!movies) {
-        return <div>No movie data found.</div>
+        return <div aria-live="polite">No movie data found.</div>;
     }
 
     return (
