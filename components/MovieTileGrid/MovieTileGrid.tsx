@@ -17,21 +17,26 @@ const MovieTileGrid: React.FC = () => {
 
     useEffect(() => {
         const fetchMovies = async () => {
-          try {
-            const response = await fetch(`http://www.omdbapi.com/?s=avengers&apikey=${process.env.NEXT_PUBLIC_MOVIE_API_KEY}`);
-            const data: ApiResponse = await response.json();
-    
-            if (data.Response === 'True') {
-              setMovies(data.Search);
-            } else {
-              console.error('API error');
-            }
-          } catch (error) {
-            console.error('Error fetching movie data:', error);
-          } finally {
-            setIsLoading(false);
-          }
-        };
+            try {
+                const response = await fetch('/api/movie/avengers', {
+                    headers: {
+                        Accept: "application/json",
+                        method: "GET",
+                    }
+                });
+                const data: ApiResponse = await response.json();
+          
+                if (response.ok) {
+                  setMovies(data.Search);
+                } else {
+                  console.error('API error');
+                }
+              } catch (error) {
+                console.error('Error fetching movie data:', error);
+              } finally {
+                setIsLoading(false);
+              }
+            };
         
         fetchMovies();
     }, []);
