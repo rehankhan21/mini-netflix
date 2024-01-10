@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+
 import MovieDetail from '@/components/MovieDetail/MovieDetail';
 import Navbar from '@/components/Navbar/Navbar';
 
@@ -23,13 +24,9 @@ const MovieDetailsPage: React.FC = () => {
 
   if (!movieDetails) return <div>Loading...</div>;
 
-  console.log(movieDetails);
-
   return (
     <div>
       <Navbar />
-      {/* <h1>{movieDetails.Title}</h1> */}
-      {/* Render other movie details */}
       <MovieDetail movieDetails = {movieDetails} />
     </div>
   );

@@ -41,7 +41,6 @@ const MovieTileGrid: React.FC = () => {
     }
 
     if (!movies) {
-        console.log(movies)
         return <div>No movie data found.</div>
     }
 
