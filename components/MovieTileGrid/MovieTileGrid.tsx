@@ -20,8 +20,8 @@ const MovieTileGrid: React.FC = () => {
             try {
                 const response = await fetch('/api/movie/avengers', {
                     headers: {
-                        Accept: "application/json",
-                        method: "GET",
+                        Accept: 'application/json',
+                        method: 'GET',
                     }
                 });
                 const data: ApiResponse = await response.json();
@@ -42,11 +42,11 @@ const MovieTileGrid: React.FC = () => {
     }, []);
     
     if (isLoading) {
-        return <div aria-busy="true">Loading...</div>;
+        return <div aria-busy='true'>Loading...</div>;
     }
     
     if (!movies) {
-        return <div aria-live="polite">No movie data found.</div>;
+        return <div aria-live='polite'>No movie data found.</div>;
     }
 
     return (

@@ -6,9 +6,8 @@ export async function GET() {
         const data = await response.json();
         
         return NextResponse.json(data)
-
     } catch (error) {
-        console.log("[CODE_ERROR]", error);
-        return new NextResponse("Interal error", { status: 500 })
+        console.log('[CODE_ERROR]', error);
+        return new NextResponse('Interal error', { status: 500 })
     }
 }

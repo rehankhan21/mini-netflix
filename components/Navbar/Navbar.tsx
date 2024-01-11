@@ -36,17 +36,17 @@ export default function Navbar() {
         onClick={toggleMenu} 
         className={styles.navbar__toggle}
         aria-expanded={isMenuOpen} 
-        aria-controls="navbar-menu"
+        aria-controls='navbar-menu'
       >
         Menu
       </button>
       <ul 
         className={`${styles['navbar__nav-list']} ${isMenuOpen ? styles['navbar__nav-list--open'] : ''}`}
-        id="navbar-menu"
+        id='navbar-menu'
       >
         {links.map((link, idx) => (
-          <li className={styles['navbar__nav-item']} key={idx}>
-            <Link onClick={toggleMenu} href={link.href} className={styles['navbar__nav-link']}>
+          <li onClick={toggleMenu} className={styles['navbar__nav-item']} key={idx}>
+            <Link href={link.href} className={styles['navbar__nav-link']}>
               {link.name}
             </Link>
           </li>

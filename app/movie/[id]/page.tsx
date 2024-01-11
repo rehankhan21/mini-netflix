@@ -15,8 +15,8 @@ const MovieDetailsPage: React.FC = () => {
       if (id) {
         const response = await fetch(`/api/movie/${id}`, {
           headers: {
-              Accept: "application/json",
-              method: "GET",
+              Accept: 'application/json',
+              method: 'GET',
           }
       });
         const data = await response.json();
@@ -32,10 +32,10 @@ const MovieDetailsPage: React.FC = () => {
   if (movieDetails.Response === 'False') redirect('/movie');
 
   return (
-    <div>
+    <>
       <Navbar />
       <MovieDetail movieDetails = {movieDetails} />
-    </div>
+    </>
   );
 };
 

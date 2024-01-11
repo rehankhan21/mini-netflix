@@ -27,7 +27,7 @@ const MovieTile: React.FC<MovieTileProps> = ({ movie }) => {
       onClick={handleOnClick}
       onKeyDown={handleKeyPress}
       tabIndex={0} 
-      role="button" 
+      role='button' 
       aria-label={`View details of ${movie.Title}`} 
     >
       <img src={movie.Poster} alt={movie.Title} className={styles['movie-tile__poster']} />
