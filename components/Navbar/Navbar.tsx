@@ -46,7 +46,7 @@ export default function Navbar() {
       >
         {links.map((link, idx) => (
           <li className={styles['navbar__nav-item']} key={idx}>
-            <Link href={link.href} className={styles['navbar__nav-link']}>
+            <Link onClick={toggleMenu} href={link.href} className={styles['navbar__nav-link']}>
               {link.name}
             </Link>
           </li>
