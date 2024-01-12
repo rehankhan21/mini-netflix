@@ -47,15 +47,14 @@
 .navbar__nav-list__nav-item {
   align-items: center;
 }
-.navbar__nav-list__nav-item__nav-link {
+.navbar__nav-list__nav-item:hover {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+.navbar__nav-list__nav-link {
   color: #fff;
   text-decoration: none;
 }
-.navbar__nav-list__nav-item__nav-link:hover {
+.navbar__nav-list__nav-link:hover {
   text-decoration: underline;
-}
-@media (max-width: 768px) {
-  .navbar__nav-list__nav-item {
-    width: 100%;
-  }
 }/*# sourceMappingURL=Navbar.module.css.map */
