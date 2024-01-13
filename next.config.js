@@ -14,6 +14,18 @@ const nextConfig = {
             },
         ]
     },
+    images: {
+        domains: ['m.media-amazon.com'],
+      },
+//        images: {
+//     remotePatterns: [
+//       {
+//         protocol: 'https',
+//         hostname: '**.example.com',
+//         port: '',
+//       },
+//     ],
+//   },
 }
 
 module.exports = nextConfig

@@ -1,7 +1,8 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
-import { Movie } from '@/types';
+import { Movie } from '@/types/types';
 import styles from './MovieTile.module.scss';
 
 type MovieTileProps = {
@@ -30,7 +31,7 @@ const MovieTile: React.FC<MovieTileProps> = ({ movie }) => {
       role='button' 
       aria-label={`View details of ${movie.Title}`} 
     >
-      <img src={movie.Poster} alt={movie.Title} className={styles['movie-tile__poster']} />
+      <Image src={`${movie.Poster}`} alt={movie.Title} className={styles['movie-tile__poster']} width='0' height='0' sizes='100vw'/>
     </div>
   );
 };
