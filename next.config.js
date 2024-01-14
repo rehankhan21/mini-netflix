@@ -15,17 +15,14 @@ const nextConfig = {
         ]
     },
     images: {
-        domains: ['m.media-amazon.com'],
-      },
-//        images: {
-//     remotePatterns: [
-//       {
-//         protocol: 'https',
-//         hostname: '**.example.com',
-//         port: '',
-//       },
-//     ],
-//   },
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'm.media-amazon.com',
+                port: '',
+            },
+        ],
+    },
 }
 
 module.exports = nextConfig

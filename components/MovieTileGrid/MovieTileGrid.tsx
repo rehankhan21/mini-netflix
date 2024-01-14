@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import MovieTile from '../MovieTile/MovieTile';
 import { Movie } from '@/types/types';
@@ -61,7 +61,7 @@ const MovieTileGrid: React.FC = () => {
     if (!movieThumbnails) {
         return <div aria-live='polite'>No movie data found.</div>;
     }
-
+    
     return (
         <div className={styles['movie-tile-grid']}>
             {movieThumbnails.map(movieThumbnail => (

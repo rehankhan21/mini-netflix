@@ -1,18 +1,18 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Logo from '../../public/netflix_logo.svg'
-import styles from '../Navbar/Navbar.module.scss'
+import styles from '../Navbar/Navbar.module.scss';
+import Logo from '../../public/netflix_logo.svg';
 
-interface linkProps {
+interface LinkProps {
   name: string;
   href: string;
 }
 
-const links: linkProps[] = [
+const links: LinkProps[] = [
   { name: 'Home', href: '/movie' },
   { name: 'Tv Shows', href: '/movie' },
   { name: 'Movies', href: '/movie' },
@@ -20,8 +20,22 @@ const links: linkProps[] = [
   { name: 'My List', href: '/movie' },
 ];
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuRef]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,29 +43,32 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <Link href='/movie' className={styles.navbar__logo}>
+      <Link href='/movie' className={styles['navbar__logo']}>
         <Image src={Logo} alt='Netflix logo' priority />
       </Link>
       <button 
         onClick={toggleMenu} 
-        className={styles.navbar__toggle}
+        className={styles['navbar__toggle']}
         aria-expanded={isMenuOpen} 
         aria-controls='navbar-menu'
       >
         Menu
       </button>
       <ul 
+        ref={menuRef}
         className={`${styles['navbar__nav-list']} ${isMenuOpen ? styles['navbar__nav-list--open'] : ''}`}
         id='navbar-menu'
       >
         {links.map((link, idx) => (
-          <li className={styles['navbar__nav-item']} key={idx}>
-            <Link onClick={toggleMenu} href={link.href} className={styles['navbar__nav-link']}>
+          <Link href={link.href} key={idx}>
+            <li className={styles['navbar__nav-list__nav-link']} onClick={() => setIsMenuOpen(false)}>
               {link.name}
-            </Link>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
     </nav>
   );
 }
+
+export default Navbar;

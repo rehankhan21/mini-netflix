@@ -13,7 +13,7 @@ type MovieApiContext = {
     setMovieThumbnails: React.Dispatch<React.SetStateAction<Movie[]>>;
     allMoviesDetails: MovieDetail[];
     setAllMoviesDetails: React.Dispatch<React.SetStateAction<MovieDetail[]>>;
-}
+};
 
 export const MovieApiContext = createContext<MovieApiContext | null>(null);
 

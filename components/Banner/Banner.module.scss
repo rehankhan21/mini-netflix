@@ -1,22 +1,48 @@
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .banner {
   position: relative;
   color: white;
+  overflow: hidden;
+  height: 700px;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
 
   &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: auto;
     max-height: 700px;
     object-fit: cover;
     display: block;
+  }
 
-    & + .banner__overlay {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 10%, transparent 85%);
-    }
+  &__image--slideOut {
+    animation: slideOut 3s ease-out;
+  }
+
+  &__image--slideIn {
+    animation: slideIn 3s ease-out;
   }
 
   &__overlay {
@@ -25,6 +51,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 10%, transparent 85%);
   }
 
   &__content {
@@ -49,4 +76,4 @@
       font-size: 2rem;
     }
   }
-} 
+}

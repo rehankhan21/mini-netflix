@@ -10,7 +10,6 @@
 
   &__logo {
     max-width: 250px;
-    padding-right: 20px;
   }
 
   &__toggle {
@@ -30,36 +29,32 @@
     list-style: none;
     display: flex;
     gap: 1rem;
-    
+
     @media (max-width: 768px) {
-      display: none; 
+      display: none;
       flex-direction: column;
       position: absolute;
-      top: 100%; 
+      top: 100%;
       left: 0;
-      width: 100%; 
+      width: 100%;
       background-color: #141414;
-    }
 
-    &--open {
-      display: flex;
-    }
-
-    &__nav-item {
-      align-items: center;
-  
-      &:hover {
-        outline: 1px solid #fff;
-        outline-offset: 2px;
+      &--open {
+        display: flex;
       }
-    }
-  
-    &__nav-link {
-      color: #fff;
-      text-decoration: none;
-  
-      &:hover {
-        text-decoration: underline;
+
+      &__nav-link {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        text-align: center;
+
+        &:hover {
+          background-color: #333;
+        }
       }
     }
   }
