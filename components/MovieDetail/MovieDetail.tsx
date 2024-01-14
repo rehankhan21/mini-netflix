@@ -50,7 +50,7 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieId }) => {
         return () => {
             controller.abort();
         };
-    }, [movieId]);
+    }, [movieId, allMoviesDetails, setAllMoviesDetails]);
     
     if (!movieDetails) return <div>Loading...</div>;
     
