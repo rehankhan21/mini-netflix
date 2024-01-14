@@ -4,7 +4,7 @@ export async function GET(request: Request, context: any) {
     const { params } = context;
 
     try {
-        const response = await fetch(`http://www.omdbapi.com/?i=${params.id.toString()}&apikey=${process.env.MOVIE_API_KEY}`);
+        const response = await fetch(`http://www.omdbapi.com/?i=${params.id.toString()}&apikey=${process.env.OMDb_API_KEY}`);
         const data = await response.json();
 
         return NextResponse.json(data);

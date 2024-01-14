@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     try {
-        const response = await fetch(`http://www.omdbapi.com/?s=avengers&apikey=${process.env.MOVIE_API_KEY}`);
+        const response = await fetch(`http://www.omdbapi.com/?s=avengers&apikey=${process.env.OMDb_API_KEY}`);
         const data = await response.json();
         
         return NextResponse.json(data)

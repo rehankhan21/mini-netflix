@@ -19,7 +19,7 @@ const Banner: React.FC<BannerProps> = ({ title, children }) => {
     const intervalId = setInterval(() => {
       setCurrentBannerIndex(nextBannerIndex);
       setNextBannerIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
-    }, 8000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [nextBannerIndex, bannerImages.length]);
