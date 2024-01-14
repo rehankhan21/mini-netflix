@@ -22,22 +22,25 @@ const links: LinkProps[] = [
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
   const menuRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (!menuRef.current?.contains(event.target as Node) && !buttonClicked) {
         setIsMenuOpen(false);
       }
+      setButtonClicked(false);
     }
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [menuRef]);
+  }, [buttonClicked, menuRef]);
 
   const toggleMenu = () => {
+    setButtonClicked(true);
     setIsMenuOpen(!isMenuOpen);
   };
 
