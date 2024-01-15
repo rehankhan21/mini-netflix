@@ -43,7 +43,7 @@ const SearchBar: React.FC = () => {
 
   return (
     <>
-      <form className={styles['search-bar']} onSubmit={handleSubmit}>
+      <form id='search-bar-form' className={styles['search-bar']} onSubmit={handleSubmit}>
         <input
           type='text'
           className={styles['search-bar__input']}
