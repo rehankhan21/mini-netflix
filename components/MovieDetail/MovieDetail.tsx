@@ -5,7 +5,6 @@ import Image from 'next/image';
 import styles from './MovieDetail.module.scss';
 import { MovieDetail } from '@/types/types';
 import { useMovieApiContext } from '@/contexts/api-context';
-import defaultImage from '../../public/no_image.jpg'
 
 type MovieDetailProps = {
     movieId: string | string[],
