@@ -45,6 +45,7 @@ const SearchBar: React.FC = () => {
     <>
       <form id='search-bar-form' className={styles['search-bar']} onSubmit={handleSubmit}>
         <input
+          id='search-bar-input'
           type='text'
           className={styles['search-bar__input']}
           value={searchTerm}
