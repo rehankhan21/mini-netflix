@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import styles from '../Navbar/Navbar.module.scss';
 import Logo from '../../public/netflix_logo.svg';
+import SearchBar from '../SearchBar/SearchBar';
 
 interface LinkProps {
   name: string;
@@ -49,6 +50,9 @@ const Navbar: React.FC = () => {
       <Link href='/movie' className={styles['navbar__logo']}>
         <Image src={Logo} alt='Netflix logo' priority />
       </Link>
+      <div className={styles['navbar__search-bar']}>
+        <SearchBar />
+      </div>
       <button 
         onClick={toggleMenu} 
         className={styles['navbar__toggle']}

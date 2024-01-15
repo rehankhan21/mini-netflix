@@ -1,4 +1,9 @@
 .movie-tile {
+  &__title {
+    padding-bottom: 15px;
+    color: #fff;
+  }
+  
   &__poster {
     transition: transform 0.3s ease-in;
     height: 100%;

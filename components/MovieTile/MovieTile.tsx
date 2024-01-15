@@ -29,9 +29,10 @@ const MovieTile: React.FC<MovieTileProps> = ({ movie }) => {
       onKeyDown={handleKeyPress}
       tabIndex={0} 
       role='button' 
-      aria-label={`View details of ${movie.Title}`} 
+      aria-label={`View details of ${movie.Title}`}
     >
-      <Image src={`${movie.Poster}`} alt={movie.Title} className={styles['movie-tile__poster']} width='0' height='0' sizes='100vw'/>
+      {movie.Poster === 'N/A' && <div className={styles['movie-tile__title']}>{movie.Title}</div>}
+      <Image src={`${movie.Poster !== 'N/A' ? movie.Poster : '/no_image.jpg'}`} alt={movie.Title} className={styles['movie-tile__poster']} width='0' height='0' sizes='100vw'/>
     </div>
   );
 };

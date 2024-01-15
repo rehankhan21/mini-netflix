@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './MovieDetail.module.scss';
 import { MovieDetail } from '@/types/types';
 import { useMovieApiContext } from '@/contexts/api-context';
+import defaultImage from '../../public/no_image.jpg'
 
 type MovieDetailProps = {
     movieId: string | string[],
@@ -52,14 +53,14 @@ const MovieDetail: React.FC<MovieDetailProps> = ({ movieId }) => {
         };
     }, [movieId, allMoviesDetails, setAllMoviesDetails]);
     
-    if (!movieDetails) return <div>Loading...</div>;
+    if (!movieDetails) return <div aria-busy='true' className='text-white'>Loading...</div>;
     
     if (movieDetails.Response === 'False') redirect('/movie');
 
     return (
         <section className={styles['movie-detail']} aria-labelledby='movie-title' role='region'>
             <Image 
-                src={`${movieDetails.Poster}`} 
+                src={`${movieDetails.Poster !== 'N/A' ? movieDetails.Poster : '/no_image.jpg'}`} 
                 alt={`Poster of ${movieDetails.Title}`} 
                 className={styles['movie-detail__poster']} 
                 width='0' 
